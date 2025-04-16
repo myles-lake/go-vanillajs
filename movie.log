@@ -23,3 +23,20 @@ ERROR: 2025/03/27 14:11:00 logger.go:35: Coudln't start a login: Found no creden
 ERROR: 2025/03/27 14:18:22 logger.go:35: Failed to find new user: sql: no rows in result set
 ERROR: 2025/03/27 14:18:22 logger.go:35: Failed to find user: sql: no rows in result set
 ERROR: 2025/03/27 16:02:52 logger.go:35: Couldn't get the cookie for the session: http: named cookie not present
+ERROR: 2025/04/16 11:20:25 logger.go:35: Failed to query movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:25 logger.go:35: Failed to get movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:29 logger.go:35: Failed to query movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:29 logger.go:35: Failed to get movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:32 logger.go:35: Failed to query movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:32 logger.go:35: Failed to get movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:45 logger.go:35: Failed to query movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:45 logger.go:35: Failed to get movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:48 logger.go:35: Failed to query movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:48 logger.go:35: Failed to get movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:50 logger.go:35: Failed to query movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:20:50 logger.go:35: Failed to get movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:23:36 logger.go:35: Failed to query movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:23:36 logger.go:35: Failed to get movies: dial tcp: lookup pg-fem-frontendmasters.j.aivencloud.com: no such host
+ERROR: 2025/04/16 11:29:33 logger.go:35: Failed to find new user: sql: no rows in result set
+ERROR: 2025/04/16 11:29:33 logger.go:35: Failed to find user: sql: no rows in result set
+ERROR: 2025/04/16 11:29:40 logger.go:35: Coudln't start a login: Found no credentials for user
