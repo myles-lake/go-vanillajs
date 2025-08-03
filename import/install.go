@@ -3,8 +3,8 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"strings"
 
 	_ "github.com/lib/pq"
@@ -12,7 +12,7 @@ import (
 
 func main() {
 	// Database connection string for your remote PostgreSQL database
-	connStr := "postgres://username:password@remote-host:port/database?sslmode=disable"
+	connStr := "postgresql://myles:175722@127.0.0.1:5432/postgres"
 
 	// Open database connection
 	db, err := sql.Open("postgres", connStr)
@@ -28,7 +28,7 @@ func main() {
 
 	// Read the SQL file
 	sqlFilePath := "database-dump.sql" // Adjust this to your .sql file path
-	sqlContent, err := ioutil.ReadFile(sqlFilePath)
+	sqlContent, err := os.ReadFile(sqlFilePath)
 	if err != nil {
 		log.Fatal("Failed to read SQL file:", err)
 	}
