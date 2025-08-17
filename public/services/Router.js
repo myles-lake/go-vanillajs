@@ -26,16 +26,13 @@ export const Router = {
         for (const r of routes) {
             if (typeof r.path === "string" && r.path === routePath) {
                 pageElement = new r.component();
-
                 break;
             } else if (r.path instanceof RegExp) {
                 const match = r.path.exec(route);
-
                 if (match) {
                     pageElement = new r.component();
                     const params = match.slice(1);
                     pageElement.params = params;
-
                     break;
                 }
             }
@@ -46,20 +43,9 @@ export const Router = {
             pageElement.textContent = "Page not found";
         }
 
-        // Insert new page
-        const oldPage = document.querySelector("main").firstElementChild;
-
-        if (oldPage) {
-            oldPage.style.viewTransitionName = "old";
-        }
-
-        pageElement.style.viewTransitionName = "new";
-
-        if (startViewTransition) {
-            document.startViewTransition(() => {
-                document.querySelector("main").innerHTML = "";
-                document.querySelector("main").appendChild(pageElement);
-            });
-        }
+        // Clear and append the new page
+        const main = document.querySelector("main");
+        main.innerHTML = "";
+        main.appendChild(pageElement);
     }
 }

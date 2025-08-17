@@ -4,11 +4,12 @@ import { MovieItem } from "./MovieItem.js";
 const HomePage = class extends HTMLElement {
     async render() {
         const topMovies = await API.getTopMovies();
-        renderMoviesInList(topMovies, document.querySelector("#top-10 ul"))
+        renderMoviesInList(topMovies, this.querySelector("#top-10 ul"))
         const randomMovies = await API.getRandomMovies();
-        renderMoviesInList(randomMovies, document.querySelector("#random ul"))
+        renderMoviesInList(randomMovies, this.querySelector("#random ul"))
 
         function renderMoviesInList(movies, ul) {
+            if (!movies || !ul) return;  // Add safety check
             ul.innerHTML = "";
 
             movies.forEach(movie => {
