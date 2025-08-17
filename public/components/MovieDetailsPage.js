@@ -1,17 +1,16 @@
-import API from "../services/api.js";
+import { API } from "../services/API.js";
 
 export class MovieDetailsPage extends HTMLElement {
     movie = null;
+    params = [];  // Initialize params property
 
     async render(id) {
         try {
             this.movie = await API.getMovieById(id);
         } catch (e) {
             app.showError();
-
             return;
         }
-
         const template = document.getElementById("template-movie-details");
         const content = template.content.cloneNode(true);
         this.appendChild(content);
@@ -51,8 +50,10 @@ export class MovieDetailsPage extends HTMLElement {
     }
 
     connectedCallback() {
-        const id = 14;
-        this.render(id);
+        if (this.params && this.params.length > 0) {
+            const id = this.params[0];
+            this.render(id);
+        }
     }
 }
 customElements.define("movie-details-page", MovieDetailsPage);

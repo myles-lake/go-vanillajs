@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReelingIt</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="app.webmanifest">
-    <link rel="icon" href="images/icon.png">
-    <script defer type="module" src="app.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="manifest" href="/app.webmanifest">
+    <link rel="icon" href="/images/icon.png">
+    <script defer type="module" src="/app.js"></script>
+    <base href="/">
 </head>
 
 <body>
     <header>
         <h1>
-            <imc src="images/logo.png" height="35" alt="ReelingIt">
+            <imc src="/images/logo.png" height="35" alt="ReelingIt">
         </h1>
         <nav>
             <ul>
@@ -31,6 +32,12 @@
         </div>
     </header>
     <main></main>
+
+    <dialog id="alert-modal">
+        <h3>Error</h3>
+        <p>There was an error loading the page.</p>
+        <button onclick="app.closeError()">Ok</button>
+    </dialog>
 
     <!--Templates-->
     <template id="template-home">
