@@ -36,6 +36,14 @@ export class MovieDetailsPage extends HTMLElement {
             ulGenres.appendChild(li);
         });
 
+        this.getElementById("buttonFavorite").addEventListener("click", () => {
+            app.saveToCollection(this.movie, id, "favorite");
+        });
+
+        this.getElementById("buttonWatchlist").addEventListener("click", () => {
+            app.saveToCollection(this.movie, id, "watchlist");
+        });
+
         const ulCast = this.querySelector("#cast");
         ulCast.innerHTML = "";
 

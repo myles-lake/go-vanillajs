@@ -59,8 +59,9 @@
                 <youtube-embed id="trailer" data-url=""></youtube-embed>
                 <section id="actions">
                     <dl id="metadata"></dl>
-                    <button>Add to Favorites</button>
-                    <button>Add to Watchlist</button>
+                    <button id="buttonFavorite" onclick="app.saveToCollection(id, 'favorite')">Add to Favorites</button>
+                    <button id="buttonWatchlist" onclick="app.saveToCollection(id, 'watchlist')">Add to
+                        Watchlist</button>
                 </section>
             </header>
             <ul id="genres"></ul>
@@ -118,6 +119,22 @@
                 <button>Login</button>
                 <p>If you don't have an account <a href="/account/login">register</a></p>
             </form>
+        </section>
+    </template>
+    <template id="template-account">
+        <section id="account">
+            <h2>You are logged in</h2>
+            <button onclick="app.logout()">Log out</button>
+            <button onclick="app.Router.go('/account/favorites')">Your favourites</button>
+            <button onclick="app.Router.go('/account/watchlist')">Your watchlist</button>
+        </section>
+    </template>
+    <template id="template-collection">
+        <section>
+            <ul id="movies-result">
+                <animated-loading data-elements="5" data-width="150px" data-height="220px">
+                </animated-loading>
+            </ul>
         </section>
     </template>
 

@@ -21,13 +21,25 @@ export const API = {
     login: async (email, password) => {
         return await API.send("account/login/", { email, password });
     },
+    getFavirites: async () => {
+        return await API.fetch("account/favorites");
+    },
+    getWatchlist: async () => {
+        return await API.fetch("account/watchlist");
+    },
+    saveToCollection: async (movie_id, collection) => {
+        return await API.send("account/save-to-collection/", {
+            movie_id,
+            collection,
+        });
+    },
     send: async (service, data) => {
         try {
-            const queryString = args ? new URLSearchParams(args).toString() : "";
             const response = await fetch(API.baseURL + service, {
                 method: "POST",
                 headers: {
-                    "content-type": "application/json"
+                    "content-type": "application/json",
+                    "Authorization": app.Store.jwt ? `Bearer ${app.Store.jwt}` : null,
                 },
                 body: JSON.stringify(data)
             });
@@ -41,7 +53,11 @@ export const API = {
     fetch: async (service, args) => {
         try {
             const queryString = args ? new URLSearchParams(args).toString() : "";
-            const response = await fetch(API.baseURL + service + (queryString ? '?' + queryString : ''));
+            const response = await fetch(API.baseURL + service + (queryString ? '?' + queryString : ''), {
+                headers: {
+                    "Authorization": app.Store.jwt ? `Bearer ${app.Store.jwt}` : null,
+                }
+            });
             const result = await response.json();
             return result;
         } catch (e) {
